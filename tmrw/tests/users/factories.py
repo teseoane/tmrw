@@ -6,11 +6,11 @@ from tmrw.users.models import Priority, Profile
 
 
 class ProfileFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = Profile
-
     priority = factory.fuzzy.FuzzyChoice(Priority.values)
     user = factory.SubFactory('tmrw.tests.users.factories.UserFactory', profile=None)
+
+    class Meta:
+        model = Profile
 
 
 class UserFactory(factory.django.DjangoModelFactory):

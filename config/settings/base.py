@@ -63,6 +63,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'tmrw.users.apps.UsersConfig',
+    'tmrw.jobs.apps.JobsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
