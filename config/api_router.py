@@ -1,4 +1,6 @@
 from django.conf import settings
+from django.conf.urls import include
+from django.urls import path
 from rest_framework.routers import DefaultRouter, SimpleRouter
 
 if settings.DEBUG:
@@ -7,7 +9,9 @@ else:
     router = SimpleRouter()
 
 
-urlpatterns = []
+urlpatterns = [
+    path('jobs/', include(('tmrw.jobs.urls', 'jobs'))),
+]
 
-app_name = "api"
+app_name = 'api'
 urlpatterns += router.urls

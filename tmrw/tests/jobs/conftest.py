@@ -9,5 +9,10 @@ def job():
 
 
 @pytest.fixture()
+def jobs():
+    return JobFactory.create_batch(5)
+
+
+@pytest.fixture()
 def job_submission():
     return JobSubmissionFactory()

@@ -9,6 +9,7 @@ class JobFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Job
+        django_get_or_create = ('name',)
 
 
 class JobSubmissionFactory(factory.django.DjangoModelFactory):
