@@ -61,7 +61,9 @@ THIRD_PARTY_APPS = [
     'drf_spectacular',
     'django_filters',
 ]
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'tmrw.users.apps.UsersConfig',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
