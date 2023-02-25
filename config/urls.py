@@ -7,30 +7,30 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 
-from project_name.views import status_view
+from tmrw.views import status_view
 
 router = routers.DefaultRouter()
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
-    path("__status__/", status_view),
+    path('__status__/', status_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # DSF
 urlpatterns += [
     # API base url
-    path("api/", include("config.api_router")),
+    path('api/', include('config.api_router')),
     # DRF auth token
-    path("auth-token/", obtain_auth_token),
-    path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
+    path('auth-token/', obtain_auth_token),
+    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path(
-        "api/docs/",
-        SpectacularSwaggerView.as_view(url_name="api-schema"),
-        name="api-docs",
+        'api/docs/',
+        SpectacularSwaggerView.as_view(url_name='api-schema'),
+        name='api-docs',
     ),
 ]
 
-if settings.DEBUG and "debug_toolbar" in settings.INSTALLED_APPS:
+if settings.DEBUG and 'debug_toolbar' in settings.INSTALLED_APPS:
     import debug_toolbar
 
-    urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+    urlpatterns = [path('__debug__/', include(debug_toolbar.urls))] + urlpatterns

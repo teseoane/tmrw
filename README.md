@@ -1,8 +1,8 @@
 [![pipeline status](https://gitlab.com/mrmilu-team-dev/django.base/badges/master/pipeline.svg)](https://gitlab.com/mrmilu-team-dev/django.base/-/commits/master)
 [![coverage report](https://gitlab.com/mrmilu-team-dev/django.base/badges/master/coverage.svg)](https://gitlab.com/mrmilu-team-dev/django.base/-/commits/master)
 
-# project_name
-Repository to project_name
+# tmrw
+Repository to tmrw
 
 ## Urls out of the box
 - `/__status__` -> Health checks
@@ -56,8 +56,8 @@ docker compose -f local.yml run --rm django coverage html
 ### Install pre-commit locally
 
 ```bash
-python3 -m venv venv/project_name
-source ./venv/project_name
+python3 -m venv venv/tmrw
+source ./venv/tmrw
 pip install -r requirements/local.txt
 pre-commit install
 ```

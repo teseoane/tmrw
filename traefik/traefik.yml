@@ -28,7 +28,7 @@ certificatesResolvers:
 http:
   routers:
     api-router:
-      rule: "Host(`staging.project_name.com`) && PathPrefix(`/api`, `/__status__`, `/api`, `/auth-token`, `/s/static`, `/project-admin-path`)"
+      rule: "Host(`staging.tmrw.com`) && PathPrefix(`/api`, `/__status__`, `/api`, `/auth-token`, `/s/static`, `/project-admin-path`)"
       entryPoints:
         - web-secure
       middlewares:
@@ -39,7 +39,7 @@ http:
         certResolver: letsencrypt
 
     nginx-router:
-      rule: "Host(`staging.project_name.com`)"
+      rule: "Host(`staging.tmrw.com`)"
       entryPoints:
         - web-secure
       middlewares:

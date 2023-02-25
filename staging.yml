@@ -8,7 +8,7 @@ services:
     build:
       context: .
       dockerfile: compose/production/django/Dockerfile
-    image: registry.gitlab.com/mrmilu/project_name/project_name:staging_django
+    image: registry.gitlab.com/mrmilu/tmrw/tmrw:staging_django
     platform: linux/x86_64
     env_file:
       - .envs/.staging
@@ -20,7 +20,7 @@ services:
     build:
       context: ./traefik/
       dockerfile: Dockerfile
-    image: registry.gitlab.com/mrmilu/project_name/project_name:staging_traefik
+    image: registry.gitlab.com/mrmilu/tmrw/tmrw:staging_traefik
     depends_on:
       - django
     volumes:

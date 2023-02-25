@@ -9,8 +9,8 @@ services:
     build:
       context: .
       dockerfile: compose/local/django/Dockerfile
-    image: project_name_local_django
-    container_name: project_name_local_django
+    image: tmrw_local_django
+    container_name: tmrw_local_django
     platform: linux/x86_64
     depends_on:
       - postgres
@@ -24,7 +24,7 @@ services:
 
   postgres:
     image: postgres:14.3-alpine
-    container_name: project_name_local_postgres
+    container_name: tmrw_local_postgres
     volumes:
       - local_postgres_data:/var/lib/postgresql/data:Z
       - local_postgres_data_backups:/backups:z

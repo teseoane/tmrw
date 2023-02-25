@@ -1,5 +1,5 @@
 # Postgres connection
-psycopg2==2.9.3  # https://github.com/psycopg/psycopg2
+#psycopg2==2.9.3  # https://github.com/psycopg/psycopg2
 argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
 # Serve static files
 whitenoise==6.2.0  # https://github.com/evansd/whitenoise
