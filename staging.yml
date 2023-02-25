@@ -1,0 +1,35 @@
+version: '3'
+
+volumes:
+  staging_traefik: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: compose/production/django/Dockerfile
+    image: registry.gitlab.com/mrmilu/project_name/project_name:staging_django
+    platform: linux/x86_64
+    env_file:
+      - .envs/.staging
+    command: /start
+    networks:
+      - proxy
+
+  traefik:
+    build:
+      context: ./traefik/
+      dockerfile: Dockerfile
+    image: registry.gitlab.com/mrmilu/project_name/project_name:staging_traefik
+    depends_on:
+      - django
+    volumes:
+      - staging_traefik:/etc/traefik/acme:z
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+    networks:
+      - proxy
+
+networks:
+  proxy:
