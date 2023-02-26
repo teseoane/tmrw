@@ -1,10 +1,9 @@
 import pytest
-from django.test import RequestFactory
 
 pytestmark = pytest.mark.django_db
 
 
-def test_status_view(client: RequestFactory):
+def test_status_view(client):
     response = client.get('/__status__/')
     json_response = response.json()
 

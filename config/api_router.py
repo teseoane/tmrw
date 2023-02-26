@@ -1,13 +1,8 @@
-from django.conf import settings
 from django.conf.urls import include
 from django.urls import path
-from rest_framework.routers import DefaultRouter, SimpleRouter
+from rest_framework.routers import SimpleRouter
 
-if settings.DEBUG:
-    router = DefaultRouter()
-else:
-    router = SimpleRouter()
-
+router = SimpleRouter()
 
 urlpatterns = [
     path('jobs/', include(('tmrw.jobs.urls', 'jobs'))),
