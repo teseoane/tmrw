@@ -66,3 +66,23 @@ pre-commit install
 ```
 docker compose -f local.yml run --rm django python manage.py shell_plus
 ```
+
+## Notes:
+
+- Since the priority management method is not specified, I opted for the fastest solution.
+- Use celery with a single worker with 3 queues based on round-robin strategy.
+- This allows a way to scale the solution by adding more workers.
+- The project has a 100% of coverage.
+
+### Development process:
+
+- I started by initializing a base project.
+- Creation of a profile for the user to add the information of the priorities.
+- Adds Job and JobSubmission models.
+- Adds job list view.
+- Adds job submission view set.
+- Adds celery and redis.
+- Adds celery priority queues.
+- Adds service with method to proccess a job
+- Adds task to call process
+- Adds logging for task
