@@ -33,7 +33,8 @@ def test_job_submision_view_set_retrieve_ok(client, job_submission):
 
 
 @pytest.mark.django_db
-def test_job_submision_view_set_create_ok(client, user, job):
+def test_job_submision_view_set_create_ok(mocker, client, user, job):
+    mocker.patch('tmrw.jobs.api.views.JobManager.schedule_job')
     client.force_authenticate(user)
 
     response = client.post(

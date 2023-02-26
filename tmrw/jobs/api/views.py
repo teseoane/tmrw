@@ -2,6 +2,7 @@ from rest_framework import generics, viewsets
 
 from tmrw.jobs.api.serializers import JobSerializer, JobSubmissionSerializer
 from tmrw.jobs.models import Job, JobSubmission
+from tmrw.jobs.services import JobManager
 
 
 class JobListView(generics.ListAPIView):
@@ -14,3 +15,8 @@ class JobSubmissionViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return JobSubmission.objects.filter(user=self.request.user).order_by('id')
+
+    def perform_create(self, serializer):
+        job_submission = serializer.save()
+        JobManager().schedule_job(job_submission)
+        return job_submission
