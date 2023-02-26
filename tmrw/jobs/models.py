@@ -16,7 +16,7 @@ class JobSubmission(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     duration = models.PositiveIntegerField()
 
-    started_at = models.DateTimeField(auto_now_add=True)
+    started_at = models.DateTimeField(null=True, blank=True)
     finished_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
