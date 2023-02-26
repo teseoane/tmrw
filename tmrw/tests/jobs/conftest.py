@@ -16,3 +16,8 @@ def jobs():
 @pytest.fixture()
 def job_submission():
     return JobSubmissionFactory()
+
+
+@pytest.fixture()
+def job_submissions(user):
+    return JobSubmissionFactory.create_batch(5, user=user)
