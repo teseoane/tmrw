@@ -5,3 +5,15 @@ POSTGRES_PORT=5432
 POSTGRES_DB=tmrw
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
+
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+
+# Celery
+# ------------------------------------------------------------------------------
+# Defined into entrypoint
+
+# Flower
+CELERY_FLOWER_USER=tmrw
+CELERY_FLOWER_PASSWORD=tmrwmo

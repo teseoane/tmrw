@@ -3,6 +3,7 @@
 Werkzeug[watchdog]==2.0.3  # https://github.com/pallets/werkzeug
 ipdb==0.13.9  # https://github.com/gotcha/ipdb
 ipython==8.3.0  # https://pypi.org/project/ipython/
+watchfiles==0.17.0  # https://github.com/samuelcolvin/watchfiles
 
 # Testing
 # ------------------------------------------------------------------------------
