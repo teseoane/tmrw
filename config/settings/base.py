@@ -17,7 +17,7 @@ DEBUG = env.bool('DJANGO_DEBUG', False)
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
 # In Windows, this must be set to your system time zone.
-TIME_ZONE = 'Europe/Madrid'
+TIME_ZONE = 'Etc/UCT'
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'es-ES'
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
@@ -25,7 +25,7 @@ USE_I18N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
 USE_L10N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
-USE_TZ = True
+USE_TZ = False
 # https://docs.djangoproject.com/en/dev/ref/setting
 LOCALE_PATHS = [str(ROOT_DIR / 'locale')]
 
@@ -278,3 +278,8 @@ CELERY_TASK_TIME_LIMIT = 5 * 60
 CELERY_TASK_SOFT_TIME_LIMIT = 60
 # https://docs.celeryq.dev/en/stable/userguide/configuration.html#beat-scheduler
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+# Queues names
+QUEUE_HIGH = 'Q1'
+QUEUE_MEDIUM = 'Q2'
+QUEUE_LOW = 'Q3'
