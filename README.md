@@ -1,6 +1,3 @@
-[![pipeline status](https://gitlab.com/mrmilu-team-dev/django.base/badges/master/pipeline.svg)](https://gitlab.com/mrmilu-team-dev/django.base/-/commits/master)
-[![coverage report](https://gitlab.com/mrmilu-team-dev/django.base/badges/master/coverage.svg)](https://gitlab.com/mrmilu-team-dev/django.base/-/commits/master)
-
 # tmrw
 Repository to tmrw
 
@@ -73,6 +70,7 @@ docker compose -f local.yml run --rm django python manage.py shell_plus
 - Use celery with a single worker with 3 queues based on round-robin strategy.
 - This allows a way to scale the solution by adding more workers.
 - The project has a 100% of coverage.
+- It only remains to make the notifications, which could be done with channels or websockets.
 
 ### Development process:
 
